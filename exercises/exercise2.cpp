@@ -19,7 +19,7 @@ void printCurrentHeight(int seconds, double ballHeight)
 int main() 
 {
 
-    const double gravity { 9.8 }; // Normal Earth Gravity is Approx. 9.8m/s
+    constexpr double gravity { 9.8 }; // Normal Earth Gravity is Approx. 9.8m/s
     double towerHeight { fetchTowerHeight() };
     double distanceFallen {0};
     double ballHeight {towerHeight};
