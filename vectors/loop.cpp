@@ -11,9 +11,10 @@ const std::string getUserInput()
     return name;
 }
 
-bool isValueInArray(const std::vector<std::string_view>& arr, const std::string_view searchName )
+template <typename T>
+bool isValueInArray(const std::vector<T>& arr, const T& searchName )
 {
-     for (const std::string_view word : arr){
+     for (const T& word : arr){
         if (word.compare(searchName) == 0){
             return true;
         }
@@ -26,7 +27,7 @@ int main()
     const std::vector<std::string_view> words{ "Alex", "Betty", "Caroline", "Dave", "Emily", "Fred", "Greg", "Holly" };
     const std::string_view name { getUserInput() };
 
-    if (isValueInArray(words, name))
+    if (isValueInArray<std::string_view>(words, name))
         std::cout << name << " was found.\n";
     else
         std::cout << name << " was not found.\n";
