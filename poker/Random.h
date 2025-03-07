@@ -19,6 +19,6 @@ namespace Random
     template<typename T>
     T get(T min, T max)
     {
-        return std::uniform_int_distribution<T>{min, max};
+        return std::uniform_int_distribution<T>{min, max}(mt);
     }
 }
